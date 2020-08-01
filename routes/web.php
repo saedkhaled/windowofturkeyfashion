@@ -12,8 +12,22 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('products','ProductController@index');
+Route::get('/products/{category}','ProductController@index')->name('products');
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', function(){
+    return view ('drop');
 });
+
+//Route::group(['prefix'=>'Categories'],function(){
+//    Route::get('/takim', function(){
+//        return view ('welcome');
+//    })->name('takim');
+//
+//    Route::get('/ustGiyim', function(){
+//        return view ('Ustgiyim');
+//    })->name('ust');
+//
+//    Route::get('/altGiyim', function(){
+//        return view ('Altgiyim');
+//    })->name('alt');
+//});

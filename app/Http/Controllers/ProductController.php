@@ -7,14 +7,14 @@ use Google\Cloud\Firestore\FirestoreClient;
 
 class ProductController extends Controller {
 
-    public function index() {
+    public function index($category) {
         try {
             $db = new FirestoreClient([
                 'keyFile' => json_decode(file_get_contents(__DIR__ . '\xmltojson-key.json'), true)
             ]);
 
             $productsRef = $db->collection('products');
-            $query = $productsRef->where('mainCategory','=','Takım');
+            $query = $productsRef->where('mainCategory','=',$category)->limit(3);
             $snapshot = $query->documents();
             foreach ($snapshot as $product) {
                 if ($product->exists()) {
