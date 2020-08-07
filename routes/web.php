@@ -12,7 +12,8 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/products/{category}','ProductController@index')->name('products');
+Route::get('/products/{category}/{number}','ProductController@index')->name('products');
+Route::get('/products/{id}','ProductController@show')->name('product.show');
 
 Route::get('/', function(){
     return view ('drop');

@@ -290,6 +290,14 @@
             <div class="row">
                 <div class="logo-area clearfix">
 
+                    <div class="col-md-3 col-xs-12 navbar-header pull-left">
+                        <div class="logo">
+                            <a href="index.php" title="{{$product['name']}}"> <img style="max-height: 110PX;
+    margin: 8px;" src="images/logo.png" alt="{{$product['name']}}"></a>
+                        </div>
+
+                    </div>
+
 
                     <div class="col-xs-12 col-md-9 pull-left">
                         <ul class="top-info unstyled">
@@ -377,7 +385,7 @@
                                     <li id="menu-item-1571" class="menu-item menu-item-has-children"><a href="productsarabic.php" title="Our Products">Our Products</a>
                                         <ul class="sub-menu">
                                             <li id="menu-item-1192"><a href="{{url('products/Clothes/1')}}" title="Clothes">Clothes</a></li>
-                                            <li id="menu-item-1192"><a href="{{url('products/outside Clothes/1')}}" title="Outside Clothes">Outside Clothes</a></li>
+                                            <li id="menu-item-1192"><a href="{{url('products/Outside Clothes/1')}}" title="Outside Clothes">Outside Clothes</a></li>
                                             <li id="menu-item-1192"><a href="{{url('products/Accessories/1')}}" title="Accessories">Accessories</a></li>
                                             <li id="menu-item-1192"><a href="{{url('products/Other/1')}}" title="Other">Other</a></li>
                                         </ul>
@@ -412,6 +420,108 @@
     </header>
 
 
+
+
+
+
+
+    <section class="description">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-12 col-xs-12 pull-left" style="        background: #ffffff08;
+    background: -webkit-linear-gradient(to left, #ffffff, #ffffff08);
+    background: linear-gradient(to left, #ffffff, #ffffff08);
+    padding: 12px;
+    margin-top: 15px;">
+                    <li style="    font-family: 'DroidKufi';     list-style-type: none;  color: #1466b3;">
+                        <a style="    font-family: 'DroidKufi'; color: #000;" href="index.php">Home</a> /
+                        <a style="    font-family: 'DroidKufi';  color: #000;" href="productsarabic.php">our Products</a> / OMUZ VE EL ÇANTASI                    </li>
+                    <hr>
+                    <h2 style="    font-family: 'DroidKufi';     color: #585555;
+    font-size: 16px;">{{$product['name']}}</h2>
+
+                    <span style="   color: #1466b3;   font-size: 17px;  font-family: 'DroidKufi';">{{((float)$product['price'])*1.6}} TL</span>
+                    <div style="    font-family: 'DroidKufi'; direction: ltr; margin-top: 5px; font-size: 15px;">
+                        <p>{!! html_entity_decode($product['description']) !!}</p></div>
+
+
+
+
+                    <br />
+
+                    <br /><br />
+
+
+                    <hr>
+
+                    <p style="color: #000;">Order quantity
+
+                    </p>
+
+                    <form action="orderarabic.php" method="get" class="contactform">
+
+                        <div class="col-lg-4 col-md-4 col-sm-4  col-xs-12" style="margin-right: 0px !important;
+padding-right: 0px !important; margin-bottom: 15px; float: left; margin: 7px;">
+
+                            <select name="quantity" id="quantity" style="    width: 133px;
+    max-width: 100%;
+    height: 40px;
+    padding: 4px;
+    text-align: right;
+    color: #000;
+    background-color: #f6f6f6;
+    margin: 3px 0px;">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                                <option>7</option>
+                                <option>8</option>
+                                <option>9</option>
+                                <option>10</option>
+                                <option>11</option>
+                                <option>12</option>
+                            </select>
+
+                        </div>
+
+                        <input type="hidden" value="3" name="id">
+
+                        <button type="submit" title="OMUZ VE EL ÇANTASI">Order now</button></form>
+                </div>
+                <div class="col-md-6 col-sm-12 col-xs-12 pull-right" style="margin-top:15px;">
+                    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner">
+                            @foreach($product['pictures'] as $picture)
+                            <div class="item">
+                                <img src="{{$picture['path']}}" alt="{{$product['name']}}" style="max-height: 400px;  margin: auto;">
+                            </div>
+                            @endforeach
+
+                        </div>
+
+                        <!-- Left and right controls -->
+                        <a class="left carousel-control" href="#myCarousel" data-slide="prev" style="    margin-top: 34%;">
+                            <span class="fa fa-arrow-left"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="right carousel-control" href="#myCarousel" data-slide="next" style="    margin-top: 34%;">
+                            <span class="fa fa-arrow-right"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+</div>
 </div>
 
 
@@ -423,6 +533,20 @@
 
 <section class="recommend" style="background: #eaeaea;">
 
+    <section class="book-desc">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-lg-12">
+                    <h4 style="    color: #ffffff;
+    margin: 0px 0px;">Description</h4>
+                    <div class="desc-box" style="direction: ltr;">
+                        <p>{!! html_entity_decode($product['description']) !!}</p>                  </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
 
 
 
@@ -433,6 +557,83 @@
 
     <div class="container">
 
+        <h2 style=" font-family: 'DroidKufi'; color: #1b1a1a; font-size: 16px; p-right: 13px; margin-bottom: 0; margin-top: 30px; ">Some products nominated for you</h2>
+
+
+
+
+
+
+
+        <div class="col-md-4 col-sm-12 xxbox" style="margin-bottom: 15px; float: left;">
+            <div class="item">
+                <div class="item-img" style="height: 250px; text-align: center;">
+                    <img src="images/kadinomuz-ve-el--cantasibizim-cantaok022-987c.jpg" style="margin: auto ; height: auto; width: auto; max-width: 100%; max-height: 250px;" alt="OMUZ VE EL ÇANTASI">
+                </div>
+                <div class="item-text">
+                    <a  href="productsarabic.php?level=3" style=" font-family: 'DroidKufi';" title="OMUZ VE EL ÇANTASI">OMUZ VE EL ÇANTASI</a>
+                    <span style="      font-size: 17px;  font-family: 'DroidKufi';">5.00$</span>
+                    <a  href="productsarabic.php?level=3"  title="OMUZ VE EL ÇANTASI">
+                        <button type="button" style=" font-family: 'DroidKufi';">
+                            Detials
+                        </button>
+                    </a>
+                </div>
+                <span id="one"></span>
+                <span id="two"></span>
+                <span id="three"></span>
+                <span id="four"></span>
+            </div>
+        </div>
+
+
+
+
+        <div class="col-md-4 col-sm-12 xxbox" style="margin-bottom: 15px; float: left;">
+            <div class="item">
+                <div class="item-img" style="height: 250px; text-align: center;">
+                    <img src="images/kadinderi-kirmizi-kol-canta-bizim-cantao-9cef(1).jpg" style="margin: auto ; height: auto; width: auto; max-width: 100%; max-height: 250px;" alt="Deri kırmızı kol çanta">
+                </div>
+                <div class="item-text">
+                    <a  href="productsarabic.php?level=4" style=" font-family: 'DroidKufi';" title="Deri kırmızı kol çanta">Deri kırmızı kol çanta</a>
+                    <span style="      font-size: 17px;  font-family: 'DroidKufi';">5.00$</span>
+                    <a  href="productsarabic.php?level=4"  title="Deri kırmızı kol çanta">
+                        <button type="button" style=" font-family: 'DroidKufi';">
+                            Detials
+                        </button>
+                    </a>
+                </div>
+                <span id="one"></span>
+                <span id="two"></span>
+                <span id="three"></span>
+                <span id="four"></span>
+            </div>
+        </div>
+
+
+
+
+        <div class="col-md-4 col-sm-12 xxbox" style="margin-bottom: 15px; float: left;">
+            <div class="item">
+                <div class="item-img" style="height: 250px; text-align: center;">
+                    <img src="images/kadindesenli-kilit-askili-kadin-canta-5--2cbf.jpg" style="margin: auto ; height: auto; width: auto; max-width: 100%; max-height: 250px;" alt="Desenli Kilit Askılı Kadın Çanta 5. model">
+                </div>
+                <div class="item-text">
+                    <a  href="productsarabic.php?level=5" style=" font-family: 'DroidKufi';" title="Desenli Kilit Askılı Kadın Çanta 5. model">Desenli Kilit Askılı Kadın Çanta 5. model</a>
+                    <span style="      font-size: 17px;  font-family: 'DroidKufi';">6.00$</span>
+                    <a  href="productsarabic.php?level=5"  title="Desenli Kilit Askılı Kadın Çanta 5. model">
+                        <button type="button" style=" font-family: 'DroidKufi';">
+                            Detials
+                        </button>
+                    </a>
+                </div>
+                <span id="one"></span>
+                <span id="two"></span>
+                <span id="three"></span>
+                <span id="four"></span>
+            </div>
+        </div>
+        <div class="clrrr"></div></div>
 
     <br />
     <div style="clear: both; display: block;"></div>
@@ -484,10 +685,26 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4 col-sm-12 pull-left">
+                    <h3 class="widget-title">The Best Offer and Quality with</h3>
+
+                    <div id="media_image-4" class="footer-widget widget_media_image">
+
+
+                        <a href="https://windowofturkeyfashion.com" target="_blank" title="OMUZ VE EL ÇANTASI"><img width="270" height="30" src="images/flogo.png" class="image wp-image-1632  attachment-full size-full" alt="OMUZ VE EL ÇANTASI" style="max-width: 100%; height: auto;" /></a>
+
+                    </div>
+
+                </div>
+                <!--/ End Recent Posts-->
+                <div class="col-md-4 col-sm-12 pull-left">
                     <div id="text-4" class="footer-widget widget_text">
                         <h3 class="widget-title">Website links </h3>
                         <div class="textwidget">
                             <ul class="list-dash">
+
+
+
+
                                 <li id="menu-item-187"><a href="terms.php" title="Terms and conditions">Terms and conditions</a></li>
 
                                 <li id="menu-item-187"><a href="privacy.php" title="Privacy Policy">Privacy Policy</a></li>

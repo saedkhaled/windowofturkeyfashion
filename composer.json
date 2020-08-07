@@ -9,6 +9,7 @@
     "license": "MIT",
     "require": {
         "php": "^7.2.5",
+        "ext-json": "*",
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^1.0",
         "google/cloud-firestore": "^1.14",
@@ -17,8 +18,7 @@
         "guzzlehttp/guzzle": "^6.3",
         "kreait/firebase-php": "^4.0",
         "laravel/framework": "^7.0",
-        "laravel/tinker": "^2.0",
-      "ext-json": "*"
+        "laravel/tinker": "^2.0"
     },
     "require-dev": {
         "facade/ignition": "^2.0",
@@ -51,6 +51,7 @@
             "Tests\\": "tests/"
         }
     },
+
     "minimum-stability": "dev",
     "prefer-stable": true,
     "scripts": {

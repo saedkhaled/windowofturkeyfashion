@@ -377,7 +377,7 @@
                                     <li id="menu-item-1571" class="menu-item menu-item-has-children"><a href="productsarabic.php" title="Our Products">Our Products</a>
                                         <ul class="sub-menu">
                                             <li id="menu-item-1192"><a href="{{url('products/Clothes/1')}}" title="Clothes">Clothes</a></li>
-                                            <li id="menu-item-1192"><a href="{{url('products/outside Clothes/1')}}" title="Outside Clothes">Outside Clothes</a></li>
+                                            <li id="menu-item-1192"><a href="{{url('products/Outside Clothes/1')}}" title="Outside Clothes">Outside Clothes</a></li>
                                             <li id="menu-item-1192"><a href="{{url('products/Accessories/1')}}" title="Accessories">Accessories</a></li>
                                             <li id="menu-item-1192"><a href="{{url('products/Other/1')}}" title="Other">Other</a></li>
                                         </ul>
@@ -412,6 +412,16 @@
     </header>
 
 
+
+
+
+
+
+
+
+
+
+</div>
 </div>
 
 
@@ -434,11 +444,52 @@
     <div class="container">
 
 
+
+
+
+
+    @foreach($products as $product)
+        <div class="col-md-4 col-sm-12 xxbox" style="margin-bottom: 15px;padding-right: 10px; padding-left: 10px; float: left;">
+
+            <div class="item">
+                <div class="item-img" style="height: 250px; text-align: center;">
+                    <img src="{{$product['pictures'][0]['path']}}" style="margin: auto ; height: auto; width: auto; max-width: 100%; max-height: 250px;" alt="des">
+                </div>
+                <div class="item-text">
+                    <a  href="{{url("products/{$product['id']}")}}" style=" font-family: 'DroidKufi';" title="{{$product['name']}}">{{$product['name']}}</a>
+                    <span style="      font-size: 17px;  font-family: 'DroidKufi';">{{((float)$product['price'])*1.6}} TL</span>
+                    <a  href="{{url("products/{$product['id']}")}}"  title="{{$product['name']}}">
+                        <button type="button" style=" font-family: 'DroidKufi';">
+                            Details
+                        </button>
+                    </a>
+                </div>
+                <span id="one"></span>
+                <span id="two"></span>
+                <span id="three"></span>
+                <span id="four"></span>
+            </div>
+        </div>
+        <div class="clrrr"></div></div>
+    @endforeach
+
     <br />
     <div style="clear: both; display: block;"></div>
     <br />
 
     <div class="clrrr"></div>
+
+    <div class="row">
+
+        @if($number > 1)
+            <a href="{{$number-1}}" class="btn btn-primary" style="padding-right: 10px; padding-left: 10px"> BACK </a>
+        @endif
+
+        <a href="{{$number+1}}" class="btn btn-primary"style="padding-right: 10px; padding-left: 10px"> NEXT </a>
+
+
+    </div>
+
 
 </section>
 </div>
